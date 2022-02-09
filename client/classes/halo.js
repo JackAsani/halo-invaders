@@ -6,13 +6,26 @@ function Halo() {
   this.transparency = 1;
   this.redBuffer = 0;
   this.blueBuffer = 0;
-  this.lineX = WIDTH / 2;
+
+  this.line_x = WIDTH / 2;
 
   this.draw = function () {
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+    ctx.arc(this.x, this.y, this.r, Math.PI / 2, (3 * Math.PI) / 2);
     ctx.lineWidth = 2;
-    ctx.strokeStyle = "rgba(255,215,0," + this.transparency + ")";
+    ctx.strokeStyle = "rgba(52, 161, 235, " + this.transparency + ")";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, (3 * Math.PI) / 2, Math.PI / 2);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "rgba(235, 52, 52, " + this.transparency + ")";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(this.line_x, HEIGHT);
+    ctx.lineTo(this.line_x, 0);
+    ctx.strokeStyle = "yellow";
     ctx.stroke();
   };
 
