@@ -41,7 +41,13 @@ function Halo() {
     return this.health > 0;
   };
 
-  this.takeDamage = function (damage) {
+  this.takeDamage = function (damage, invader_x) {
+    if (invader_x < this.line_x) {
+      this.line_x -= 10;
+    } else {
+      this.line_x += 10;
+    }
+
     this.health -= damage;
   };
 }

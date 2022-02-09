@@ -46,7 +46,7 @@ function updateInvaders() {
     if (invader.hasReachedHalo() && halo.hasHealth()) {
       invaders.splice(i, 1);
       damage = invader.attackPower;
-      halo.takeDamage(damage);
+      halo.takeDamage(damage, invader.x);
     } else {
       invader.update();
     }
