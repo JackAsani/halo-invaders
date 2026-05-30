@@ -47,6 +47,8 @@ function StartGame() {
   // } else {
   //   portal.resetAnimation();
   // }
+  ChangeSong("./audio/theme.mp3");
+  // songChanged = true;
 
   healthBar = new HealthBar();
   halo = new Halo();
